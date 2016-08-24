@@ -1,8 +1,7 @@
-<<<<<<< HEAD
 class Pin < ApplicationRecord
   belongs_to :user
+
+  has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 end
-=======
-class Pin < ApplicationRecord
-end
->>>>>>> 28d39375e057c5639ea0efd1c4bc49de20d4cf91
+
